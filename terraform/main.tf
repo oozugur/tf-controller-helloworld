@@ -1,13 +1,23 @@
+provider "google" {
+  region = "eu-central2-a"
+}
+
 terraform {
-  required_version = ">= 0.12.26"
+  required_version = "~> 1.2.2"
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 4.24"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.1"
+    }
+  }
 }
 
-variable "subject" {
-   type = string
-   default = "tfctl-rc"
-   description = "Subject to hello"
-}
-
-output "hello_world" {
-  value = "Hey ya, ${var.subject}!"
+resource "google_storage_bucket" "bucket" {
+  name     = "ordt-bckt-12345"
+  location = "EU"
 }
