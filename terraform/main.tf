@@ -1,6 +1,7 @@
 provider "google" {
   region = "eu-central2-a"
   project = "oredata-ops-demo"
+  
 }
 
 terraform {
