@@ -23,3 +23,8 @@ resource "google_storage_bucket" "bucket" {
   name     = "ordt-bckt-12345"
   location = "EU"
 }
+
+resource "google_storage_bucket" "bucket" {
+  name     = "ordt-bckt-123425"
+  location = "EU"
+}
